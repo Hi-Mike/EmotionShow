@@ -1,5 +1,6 @@
 package com.jude.emotionshow.presentation.shop;
 
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -35,7 +36,11 @@ public class PayViewHolder extends BaseViewHolder<Pay> {
     public void setData(Pay data) {
         detail.setText(data.getInfo());
         price.setText(data.getCoins());
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        time.setText(sdf.format(new Date(data.getTime() * 1000)));
+        if (data.getTime() != 0) {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            time.setText(sdf.format(new Date(data.getTime() * 1000)));
+        }else {
+            time.setVisibility(View.GONE);
+        }
     }
 }

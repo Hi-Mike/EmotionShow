@@ -29,7 +29,7 @@ import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.SingleTagFlowLayout;
 import com.zhy.view.flowlayout.TagAdapter;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import butterknife.Bind;
@@ -126,7 +126,7 @@ public class GoodsDetailActivity extends BeamDataActivity<GoodsDetailPresenter, 
         order.setGid(data.getId());
         order.setGoodsName(data.getName());
         order.setPrice(data.getPrice());
-        stringMap = new HashMap<>();
+        stringMap = new LinkedHashMap<>();
         flowLayouts = new SingleTagFlowLayout[data.getInfo().size()];
         int i = 0;
         for (GoodsDetail.InfoItem infoItem : data.getInfo()) {
